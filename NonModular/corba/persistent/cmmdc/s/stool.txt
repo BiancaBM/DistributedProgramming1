@@ -1,0 +1,6 @@
+register -server CmmdcApp.PersistentServer -applicationName PersistentCmmdcServer -classpath e:\mk\distr\NonModular\corba\persistent\cmmdc\s\build\
+
+Linux: register -server CmmdcApp.PersistentServer -applicationName PersistentCmmdcServer -classpath /home/mk/distr/NonModular/corba/persistent/cmmdc/s/build/
+
+unregister -serverid 257
+quit

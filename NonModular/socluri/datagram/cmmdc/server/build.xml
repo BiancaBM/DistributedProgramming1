@@ -1,0 +1,32 @@
+﻿<project name="DatagramSocket" default="Compile" basedir=".">
+ 
+  <!-- set global properties for this build.dir -->
+  <property name="main.class" value="cmmdc.datagram.s.AppServer"/>
+  <property name="build.dir" location="build"/>
+  
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build.dir directory structure used by compile -->
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <copy file="../protocol/Protocol.java" todir="src"/>
+  </target>
+
+  <target name="Compile" depends="init" >
+    <javac srcdir="src" destdir="${build.dir}" includeantruntime="false">
+      <compilerarg value="-Xlint"/>
+    </javac>     
+  </target>
+
+  <target name="Server"> 
+    <java classname="${main.class}"  fork="true"
+    classpath="${build.dir}"/>
+  </target>
+
+</project>
+
+
+
+
+

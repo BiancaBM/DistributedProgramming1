@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project name="streaming" default="compile" basedir=".">
+	
+  <target name="compile">
+    <ant dir="streamingaudio/server" target="Compile"/>
+    <ant dir="streamingaudio/client" target="Compile"/>
+    <ant dir="streamingimage/server" target="Compile"/>
+    <ant dir="streamingimage/client" target="Compile"/>
+    <ant dir="streamingtext/server" target="Compile"/>
+    <ant dir="streamingtext/client" target="Compile"/>
+    <ant dir="streamingvideo/server" target="Compile"/>
+    <ant dir="streamingvideo/client" target="Compile"/>
+  </target>
+
+  <target name="audio-Server">
+    <ant dir="streamingaudio/server" target="audio-Server"/>
+  </target>
+  
+  <target name="audio-Client">
+    <ant dir="streamingaudio/client" target="audio-Client"/>
+  </target>
+  
+  <target name="image-Server">
+    <ant dir="streamingimage/server" target="image-Server"/>
+  </target>
+  
+  <target name="image-Client">
+    <ant dir="streamingimage/client" target="image-Client"/>
+  </target>
+  
+  <target name="text-Server">
+    <ant dir="streamingtext/server" target="text-Server"/>
+  </target>
+  
+  <target name="text-Client">
+    <ant dir="streamingtext/client" target="text-Client"/>
+  </target>
+  
+  <target name="video-Server">
+    <ant dir="streamingvideo/server" target="video-Server"/>
+  </target>
+  
+  <target name="video-ClientJMF">
+    <ant dir="streamingvideo/client" target="video-ClientJMF"/>
+  </target>
+  
+  <target name="video-ClientWMP">
+    <ant dir="streamingvideo/client" target="video-ClientWMP"/>
+  </target>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="topicProgramat" default="run" basedir=".">
+  <property name="class.name" value="MsgPS"/>
+  <property name="build.dir" location="build"/>
+   
+  <path id="myclasspath">
+    <pathelement path="${build.dir}" />
+    <fileset dir="${messagequeue.home}/mq/lib">
+       <include name="*.jar"/>
+    </fileset>
+  </path>
+
+  <target name="init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac srcdir="src" destdir="${build.dir}"
+      includeantruntime="false" classpathref="myclasspath" >
+      <compilerarg value="-Xlint"/>
+    </javac>
+  </target>
+ 
+  <target name="run" depends="compile" >
+     <java classname="${class.name}" fork="yes" maxmemory="100M"
+       classpathref="myclasspath" />  
+  </target>
+</project>

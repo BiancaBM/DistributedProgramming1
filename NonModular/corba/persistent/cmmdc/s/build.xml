@@ -1,0 +1,42 @@
+<project name="CORBA-Server" default="Compile" basedir=".">
+    <description>Server actions </description>
+  
+  <property name="build.dir" value="build"/>
+  <property name="idl-file"  value="Cmmdc.idl"/> 
+  <property name="port" value="1050"/>
+  <property name="host" value="localhost"/>
+  
+  <path id="myclasspath">
+    <pathelement path="${build.dir}"/>
+  </path> 
+  
+  <target name="Init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <exec executable="idlj">
+      <arg value="-fall"/>
+      <arg value="-td"/>
+      <arg value="src"/>
+      <arg value="${idl-file}"/>
+    </exec>
+  </target>
+
+  <target name="Compile" depends="Init">
+    <javac srcdir="src" destdir="${build.dir}"
+       includeantruntime="false" classpathref="myclasspath">
+       <compilerarg value="-Xlint"/>
+    </javac>  
+  </target>
+  
+  <target name="Orb" depends="Compile">
+   <exec executable="orbd">
+     <arg line="-ORBInitialPort ${port} -ORBInitialHost ${host} -serverPollingTime 200" />
+   </exec>
+  </target>
+  
+</project>
+
+
+
+
+

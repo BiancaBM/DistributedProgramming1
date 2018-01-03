@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="cmmdc" default="Compile" basedir=".">
+  
+  <target name="Compile">
+    <ant dir="server" target="Compile"/>
+    <ant dir="client" target="Compile"/>
+  </target> 
+  
+  <target name="Server">
+    <ant dir="server" target="Server"/>
+  </target>
+  
+  <target name="Client">
+    <ant dir="client" target="Client"/>
+  </target>
+</project>

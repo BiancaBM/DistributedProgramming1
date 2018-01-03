@@ -1,0 +1,3 @@
+register -server CmmdcApp.PersistentServer -applicationName PersistentCmmdcServer -classpath d:\mk\distr9\corba\persistent\cmmdc\s\mods\
+
+rem Linux register -server CmmdcApp.PersistentServer -applicationName CmmdcApp.PersistentCmmdcServer -classpath /home/mk/distr9/corba/persistent/s/

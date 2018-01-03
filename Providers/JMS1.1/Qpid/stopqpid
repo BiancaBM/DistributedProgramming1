@@ -1,0 +1,6 @@
+#!/bin/bash
+QPID_HOME=~/JavaApp/qpid-broker/6.1.1
+export QPID_HOME
+QPID_WORK=~/TEMP
+export QPID_WORK
+$QPID_HOME/bin/qpid.stop

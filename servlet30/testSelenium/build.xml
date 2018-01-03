@@ -1,0 +1,41 @@
+<project name="DBUtils" default="run" basedir=".">
+  <property name="main.class" value="TestSelenium"/>
+  <property name="build.dir" location="build"/>
+  <property name="browser" value="mozilla"/>
+  <property name="selenium.version" value="3.8.1"/>
+  <!--<property name="selenium.home" location="e:/JavaApp/selenium-java-${selenium.version}"/>-->
+  <property name="selenium.home" location="/home/mk/JavaApp/selenium-java-${selenium.version}"/>
+  
+  <path id="myclasspath">
+    <fileset dir="${selenium.home}/libs">
+       <include name="*.jar"/>
+    </fileset> 
+    <pathelement path="${build.dir}"/>
+    <pathelement path="${selenium.home}/client-combined-${selenium.version}.jar"/>
+  </path>  
+  
+  <target name="init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+  </target>
+  
+  <target name="compile" depends="init" >
+    <javac srcdir="src" destdir="${build.dir}" 
+       classpathref="myclasspath"  includeantruntime="false" >
+      <compilerarg value="-Xlint"/>
+    </javac>  
+  </target>
+  
+  <target name="run" depends="compile">       
+    <java classname="${main.class}" classpathref="myclasspath" fork="true">
+      <!--<jvmarg value="-Dwebdriver.chrome.driver=chromedriver.exe"/>-->
+      <jvmarg value="-Dwebdriver.gecko.driver=geckodriver"/>
+      <arg line="${mozilla}"/>
+    </java>  
+  </target>
+</project>
+
+
+
+
+

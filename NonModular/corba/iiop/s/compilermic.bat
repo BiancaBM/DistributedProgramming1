@@ -1,0 +1,1 @@
+rmic -classpath build -d build -iiop cmmdc.iiop.s.CmmdcImpl

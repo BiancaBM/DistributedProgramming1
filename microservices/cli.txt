@@ -1,0 +1,9 @@
+java -jar payara-micro-4.1.2.173.jar --deploy apphelloP.war
+
+java -jar payara-micro-4.1.2.173.jar --deploy jaxws-cmmdc.war
+
+java -jar payara-micro-4.1.2.173.jar --deploy HelloWorld.war
+
+java -jar payara-micro-4.1.2.173.jar --deploy Imagine.jar
+
+java -jar payara-micro-4.1.2.173.jar --deploy CmmdcWebSocketParam.war

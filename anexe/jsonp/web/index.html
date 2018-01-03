@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="mycss.css">
+</head>  
+<body>
+  <script>
+    function sender(){
+      var mField=document.getElementById("m");
+      var nField=document.getElementById("n");
+      s = document.createElement("script");
+      s.src = "/jsonp/cmmdc?m="+escape(mField.value)+"&n="+escape(nField.value);
+      document.body.appendChild(s);
+    }
+    function myFct(myObj) {
+      document.getElementById("result").innerHTML="Cmmdc : "+myObj.Cmmdc;
+    }
+  </script>
+  
+  <center>
+  <h1> Pagina de apelare CmmdcServlet </h1>
+      <table> 
+        <tr>
+          <td><label> Primul numar </label></td>
+          <td>    
+             <input type="number" id="m" size="5" 
+             placeholder="introduceti"
+             required min="1">
+          </td>
+        </tr>  
+        <tr>
+          <td><label> Al doilea numar </label></td>
+          <td>
+             <input type="number" id="n" size="5" 
+             placeholder="introduceti"
+             required min="1"">
+          </td>
+        </tr>
+        <tr>
+          <td>          
+             <p><button onclick="sender()">Calculeaza</button>               
+          </td>
+        </tr>
+      </table>  
+      <p>
+      <div id="result"></div>
+  </center>
+</body>
+</html>
+

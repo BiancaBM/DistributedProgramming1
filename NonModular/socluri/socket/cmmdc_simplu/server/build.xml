@@ -1,0 +1,35 @@
+<project name="Socket" default="Server" basedir=".">
+  <description>  Socluri TCP  </description>
+  
+  <!-- set global properties for this build -->
+  <property name="build" location="work"/>
+  <property name="src" location="src" />
+
+  <path id="myclasspath">
+    <pathelement path="${build}"/>
+  </path> 
+  
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <delete dir="${build}"/>
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="Compile" depends="init">
+    <javac srcdir="${src}" destdir="${build}" includeantruntime="false"
+    classpathref="myclasspath">
+       <compilerarg value="-Xlint"/>
+   </javac>
+  </target>
+
+  <target name="Server" depends="Compile"> 
+    <java classname="cmmdc.socket.server.MyMServer" classpath="${build}" fork="true"/>
+  </target>
+</project>
+
+
+
+
+

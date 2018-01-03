@@ -1,0 +1,1 @@
+MyGraphP nu functioneaza in glassfish.

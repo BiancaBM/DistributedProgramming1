@@ -1,0 +1,3 @@
+grant codeBase "file:/mk/distr9/rmi/VariantaNeModulara/cmmdc-policy/s/build/"{
+    permission java.security.AllPermission;
+};

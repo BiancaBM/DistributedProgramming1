@@ -1,0 +1,43 @@
+<project name="CORBA-Client" default="Client" basedir=".">
+    <description>client actions </description>
+  
+  <property name="build.dir" value="mods"/>
+  <property name="idl-file"  value="Cmmdc.idl"/> 
+  <property name="port" value="1050"/>
+  <property name="host" value="localhost"/>
+  <property name="main-class" value="CmmdcApp.CmmdcClient"/>
+  
+  <path id="myclasspath">
+    <pathelement path="${build.dir}"/>
+  </path> 
+  
+  <target name="Init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <exec executable="idlj">
+      <arg value="-fall"/>
+      <arg value="-td"/>
+      <arg value="src"/>
+      <arg value="${idl-file}"/>
+    </exec>
+  </target>
+
+  <target name="Compile" depends="Init">
+    <javac srcdir="src" destdir="${build.dir}"
+       includeantruntime="false" classpathref="myclasspath">
+       <compilerarg value="-Xlint"/>
+    </javac>  
+  </target>
+  
+  <target name="Client" depends="Compile">
+     <java classname="${main-class}" fork="true"
+        modulepath="mods" module="client">     	       
+        <arg line="-ORBInitialPort ${port} -ORBInitialHost ${host}" />
+     </java>
+  </target> 
+</project>
+
+
+
+
+

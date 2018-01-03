@@ -1,0 +1,19 @@
+1. initp1.bat
+2. initp2.bat
+
+obsolate 
+Parola initiala se gaseste in data/jonathan.err
+Fixare password
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '1q2w3e4r';
+ALTER USER 'root'@'localhost' IDENTIFIED BY '1q2w3e4r';
+end-obsolate
+
+3. sessionp 
+Drept de acces din exterior
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'mypass';
+mysql> FLUSH PRIVILEGES;
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1q2w3e4r';
+FLUSH PRIVILEGES;
+
+mypass := 1q2w3e4r

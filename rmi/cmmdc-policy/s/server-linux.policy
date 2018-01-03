@@ -1,0 +1,3 @@
+grant codeBase "file:/home/mk/distr9/rmi/cmmdc-policy/s/" {
+    permission java.security.AllPermission;
+};

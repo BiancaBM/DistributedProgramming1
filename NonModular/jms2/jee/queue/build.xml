@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<project name="queue" default="package" basedir=".">
+  <property name="JEE_HOME" location="e:/JavaApp/payara41"/>
+	<target name="package">
+		<ant dir="sender" target="tojar"/>
+		<ant dir="syncrcv" target="tojar"/>
+    <ant dir="asyncrcv" target="tojar"/>
+	</target>
+</project>

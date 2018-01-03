@@ -1,0 +1,1 @@
+java  --add-modules java.corba CmmdcApp.CmmdcClient -ORBInitialPort 1050 -ORBInitialHost localhost

@@ -1,0 +1,11 @@
+<project name="qpid" basedir="." default="run">
+  <property name="qpid.home" location="e:/JavaApp/qpid/qpid-client/6.1.4" />
+  
+  <target name="run">
+		<ant dir="queueProgramat" target="run"/>
+    <ant dir="queueJNDI" target="run"/>
+		<ant dir="topicProgramat" target="run"/>
+    <ant dir="topicJNDI" target="run"/>
+	</target> 
+  
+</project>

@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+apply plugin: 'application'
+
+//mainClassName='simple.app.cmmdc.VisualCmmdc'
+mainClassName='simple.app.cmmdc.App'
+
+/*
+// Varianta 1
+run{  
+  args System.getProperty("exec.args").split()    
+}
+*/
+// Varianta 2
+run{
+  if(project.hasProperty('args')){
+    args project.args.split('\\s')
+  }
+}
+

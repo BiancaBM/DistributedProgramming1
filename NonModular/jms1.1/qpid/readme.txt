@@ -1,0 +1,1 @@
+In catalogul lib se copiaza fisierul  slf4j-nop-*.jar.

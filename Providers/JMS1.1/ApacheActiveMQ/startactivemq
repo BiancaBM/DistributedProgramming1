@@ -1,0 +1,4 @@
+#!/bin/bash
+ACTIVEMQ_HOME=~/JavaApp/apache-activemq-5.14.4
+export ACTIVEMQ_HOME
+$ACTIVEMQ_HOME/bin/activemq start

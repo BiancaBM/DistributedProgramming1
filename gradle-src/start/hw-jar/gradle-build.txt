@@ -1,0 +1,9 @@
+apply plugin: 'application'
+
+mainClassName='HelloWorld'
+
+jar {
+    manifest {
+        attributes 'Main-class': 'HelloWorld'
+    }
+}

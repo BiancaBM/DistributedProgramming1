@@ -1,0 +1,1 @@
+Se copiaza catalogul url in Serverul Web 

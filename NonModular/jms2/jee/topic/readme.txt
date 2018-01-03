@@ -1,0 +1,5 @@
+Resurse:
+
+myTopicConnecionFactory
+
+myTopic

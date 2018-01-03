@@ -1,0 +1,13 @@
+<project name="activemq" basedir="." default="programat">
+  <property name="messagequeue.home" location="e:/JavaApp/MessageQueue5.1.1" />
+  
+  <target name="programat">
+		<ant dir="queueProgramat" target="run"/>
+		<ant dir="topicProgramat" target="run"/>
+	</target> 
+  
+  <target name="jndi">
+    <ant dir="queueJNDI" target="run"/>
+    <ant dir="topicJNDI" target="run"/>
+	</target> 
+</project>

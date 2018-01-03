@@ -1,0 +1,5 @@
+Probleme
+
+1. POST
+2. Client ptr. WebSocket.
+3. Client asincron
